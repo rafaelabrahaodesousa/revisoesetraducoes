@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafael Abrahão de Sousa | Revisor de Textos & Tradutor</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            base: '#0B0F17',
+                            card: '#111827',
+                            border: '#1F2937',
+                            hover: '#374151',
+                        },
+                        accent: {
+                            gold: '#F59E0B',
+                            amber: '#D97706',
+                            cyan: '#38BDF8',
+                            emerald: '#10B981'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .bg-gradient-dark {
+            background: linear-gradient(135deg, #111827 0%, #0B0F17 100%);
+        }
+        .bg-gradient-gold {
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+        }
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glow-gold {
+            box-shadow: 0 0 30px -5px rgba(245, 158, 11, 0.25);
+        }
+    </style>
+</head>
+<body class="bg-dark-base text-slate-100 font-sans antialiased selection:bg-accent-gold selection:text-black">
+
+    <!-- Navegação / Navbar -->
+    <nav class="fixed top-0 left-0 w-full bg-dark-base/90 backdrop-blur-md z-50 border-b border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="#" class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-gold flex items-center justify-center text-black font-extrabold text-lg shadow-md shadow-accent-gold/20">
+                        RA
+                    </div>
+                    <div>
+                        <span class="text-base sm:text-lg font-bold text-white block leading-tight">Rafael Abrahão</span>
+                        <span class="text-[11px] text-accent-gold font-medium block">Revisor, Tradutor & Mestre (UFU)</span>
+                    </div>
+                </a>
+                
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#sobre" class="text-slate-300 hover:text-accent-gold font-medium text-sm transition-colors">Sobre Mim</a>
+                    <a href="#servicos" class="text-slate-300 hover:text-accent-gold font-medium text-sm transition-colors">Serviços</a>
+                    <a href="#formacao" class="text-slate-300 hover:text-accent-gold font-medium text-sm transition-colors">Formação</a>
+                    <a href="#como-funciona" class="text-slate-300 hover:text-accent-gold font-medium text-sm transition-colors">Como Funciona</a>
+                    <a href="https://wa.me/5534999997382?text=Olá,%20Rafael!%20Gostaria%20de%20um%20orçamento%20para%20revisão/tradução." target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-full shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/30 transition-all flex items-center gap-2 text-sm">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Solicitar Orçamento
+                    </a>
+                </div>
+
+                <!-- Botão Menu Mobile -->
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" type="button" aria-label="Abrir menu" class="text-slate-300 hover:text-white p-2 rounded-lg border border-dark-border focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Dropdown Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-card border-b border-dark-border px-6 pt-4 pb-6 space-y-3 max-h-[calc(100vh-5rem)] overflow-y-auto">
+            <a href="#sobre" class="block text-slate-300 hover:text-accent-gold font-medium py-2 border-b border-dark-border">Sobre Mim</a>
+            <a href="#servicos" class="block text-slate-300 hover:text-accent-gold font-medium py-2 border-b border-dark-border">Serviços</a>
+            <a href="#formacao" class="block text-slate-300 hover:text-accent-gold font-medium py-2 border-b border-dark-border">Formação & Qualificações</a>
+            <a href="#como-funciona" class="block text-slate-300 hover:text-accent-gold font-medium py-2 border-b border-dark-border">Como Funciona</a>
+            <div class="pt-2">
+                <a href="https://wa.me/5534999997382?text=Olá,%20Rafael!%20Gostaria%20de%20um%20orçamento%20para%20revisão/tradução." target="_blank" class="block w-full text-center bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3.5 rounded-xl shadow-lg">
+                    <i class="fa-brands fa-whatsapp text-lg mr-2"></i> Solicitar Orçamento no WhatsApp
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Seção Hero / Apresentação -->
+    <section class="pt-32 pb-20 md:pt-44 md:pb-32 bg-gradient-to-b from-dark-base via-dark-card to-dark-base relative overflow-hidden">
+        <!-- Luz de fundo estilo neon dark -->
+        <div class="absolute top-20 right-10 w-96 h-96 bg-accent-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 left-10 w-80 h-80 bg-accent-cyan/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-dark-card border border-dark-border px-4 py-2 rounded-full text-xs font-semibold text-accent-gold">
+                        <span class="w-2 h-2 rounded-full bg-accent-gold animate-pulse"></span>
+                        Revisão Textual • Tradução • Consultoria Acadêmica
+                    </div>
+                    
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+                        Rigor técnico e precisão para transformar a sua <span class="text-gradient-gold">comunicação escrita</span>.
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Mestre pela UFU com vasta experiência na revisão de dissertações, teses, artigos acadêmicos, livros e materiais empresariais. Normalização nas normas ABNT, APA e Vancouver.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="https://wa.me/5534999997382?text=Olá,%20Rafael!%20Gostaria%20de%20enviar%20meu%20texto%20para%20orçamento." target="_blank" class="w-full sm:w-auto bg-gradient-gold text-black font-extrabold px-8 py-4 rounded-xl shadow-xl shadow-accent-gold/20 hover:opacity-95 transition-all text-center flex items-center justify-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Enviar Texto para Orçamento
+                        </a>
+                        <a href="#servicos" class="w-full sm:w-auto bg-dark-card hover:bg-dark-border text-slate-200 font-semibold px-8 py-4 rounded-xl border border-dark-border transition-all text-center">
+                            Ver Serviços
+                        </a>
+                    </div>
+
+                    <!-- Métricas de Autoridade -->
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-dark-border max-w-lg mx-auto lg:mx-0">
+                        <div class="text-center lg:text-left">
+                            <p class="text-2xl sm:text-3xl font-extrabold text-white">+3.000</p>
+                            <p class="text-xs text-slate-400">Trabalhos Revisados</p>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <p class="text-2xl sm:text-3xl font-extrabold text-white">Mestre</p>
+                            <p class="text-xs text-slate-400">Pela UFU</p>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <p class="text-2xl sm:text-3xl font-extrabold text-white">16+ Anos</p>
+                            <p class="text-xs text-slate-400">De Experiência</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto do Profissional -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-3xl p-3 bg-gradient-to-tr from-accent-gold via-slate-700 to-dark-border glow-gold">
+                        <div class="w-full h-full rounded-2xl bg-dark-card overflow-hidden border-2 border-dark-border relative">
+                            <img src="foto-rafael.jpg" alt="Rafael Abrahão de Sousa" class="w-full h-full object-cover object-top">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre Mim -->
+    <section id="sobre" class="py-20 bg-dark-card border-y border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <span class="text-xs font-bold text-accent-gold uppercase tracking-widest">Trajetória Profissional</span>
+                <h2 class="text-3xl font-bold text-white sm:text-4xl mt-1">Sobre Mim</h2>
+                <div class="w-16 h-1 bg-gradient-gold mx-auto my-4 rounded-full"></div>
+                <p class="text-slate-300 text-base sm:text-lg leading-relaxed pt-2">
+                    Professor, Mestre em Tecnologias, Comunicação e Educação pela Universidade Federal de Uberlândia (UFU) e revisor de textos atuante desde 2008.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-dark-base p-8 rounded-2xl border border-dark-border hover:border-accent-gold/40 transition-all">
+                    <div class="w-12 h-12 bg-accent-gold/10 text-accent-gold rounded-xl flex items-center justify-center text-2xl font-bold mb-6">
+                        <i class="fa-solid fa-pen-nib"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Revisão e Adequação</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Análise gramatical, ortográfica, estilística e de coerência textual. Adequação minuciosa às normas ABNT, APA e Vancouver.
+                    </p>
+                </div>
+
+                <div class="bg-dark-base p-8 rounded-2xl border border-dark-border hover:border-accent-gold/40 transition-all">
+                    <div class="w-12 h-12 bg-accent-gold/10 text-accent-gold rounded-xl flex items-center justify-center text-2xl font-bold mb-6">
+                        <i class="fa-solid fa-language"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 text-white mb-3">Tradução & Abstracts</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Tradução e versão de resumos (abstracts) e artigos acadêmicos para o inglês e espanhol com proficiência comprovada (TOEFL / PROFLIN).
+                    </p>
+                </div>
+
+                <div class="bg-dark-base p-8 rounded-2xl border border-dark-border hover:border-accent-gold/40 transition-all">
+                    <div class="w-12 h-12 bg-accent-gold/10 text-accent-gold rounded-xl flex items-center justify-center text-2xl font-bold mb-6">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Bancas & Avaliações</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Experiência sólida como corretor de redações de processos seletivos públicos (UFU), plataformas educacionais e revistas científicas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Serviços -->
+    <section id="servicos" class="py-20 bg-dark-base">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-accent-gold uppercase tracking-widest">Soluções Textuais</span>
+                <h2 class="text-3xl font-bold text-white sm:text-4xl mt-1">Serviços Oferecidos</h2>
+                <div class="w-16 h-1 bg-gradient-gold mx-auto my-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-dark-card p-8 rounded-2xl border border-dark-border hover:border-accent-gold/50 transition-all">
+                    <div class="w-12 h-12 bg-dark-base text-accent-cyan rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Revisão Acadêmica</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Revisão de Monografias, TCCs, Dissertações de Mestrado, Teses de Doutorado e Artigos Científicos com adequação rigorosa às normas da ABNT, APA e Vancouver.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-dark-card p-8 rounded-2xl border border-dark-border hover:border-accent-gold/50 transition-all">
+                    <div class="w-12 h-12 bg-dark-base text-accent-cyan rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-earth-americas"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Tradução de Abstracts</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Tradução precisa de resumos e artigos para o inglês e espanhol instrumental e acadêmico, respeitando o vocabulário técnico da área.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-dark-card p-8 rounded-2xl border border-dark-border hover:border-accent-gold/50 transition-all">
+                    <div class="w-12 h-12 bg-dark-base text-accent-cyan rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Revisão Editorial & Literária</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Revisão textual para livros, revistas, relatórios gerenciais, portais web, aplicativos e materiais didáticos de grandes editoras.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-dark-card p-8 rounded-2xl border border-dark-border hover:border-accent-gold/50 transition-all">
+                    <div class="w-12 h-12 bg-dark-base text-accent-cyan rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-pen-ruler"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Mentoria & Correção de Redação</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Orientação e correção detalhada de redações para o ENEM, vestibulares e concursos públicos com feedback estruturado por competências.
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-dark-card p-8 rounded-2xl border border-dark-border hover:border-accent-gold/50 transition-all">
+                    <div class="w-12 h-12 bg-dark-base text-accent-cyan rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-hashtag"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Gestão de Mídias Sociais</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Criação de conteúdo, revisão textual e gestão estratégica de páginas profissionais no Facebook e perfis no Instagram.
+                    </p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-dark-card p-8 rounded-2xl border border-dark-border hover:border-accent-gold/50 transition-all">
+                    <div class="w-12 h-12 bg-dark-base text-accent-cyan rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Aulas & Treinamentos</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Aulas de Língua Portuguesa, Inglês, Redação, Oratória e Metodologia do Trabalho Científico nos modos presencial e on-line.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Formação Acadêmica -->
+    <section id="formacao" class="py-20 bg-dark-card border-t border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-accent-gold uppercase tracking-widest">Currículo & Títulos</span>
+                <h2 class="text-3xl font-bold text-white sm:text-4xl mt-1">Formação Acadêmica</h2>
+                <div class="w-16 h-1 bg-gradient-gold mx-auto my-4 rounded-full"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-6">
+                <!-- Mestrado -->
+                <div class="p-6 bg-dark-base rounded-2xl border-l-4 border-accent-gold shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <span class="text-xs font-bold text-black bg-accent-gold px-3 py-1 rounded-full">2021 – 2023</span>
+                        <h3 class="text-lg font-bold text-white mt-2">Mestrado em Tecnologias, Comunicação e Educação</h3>
+                        <p class="text-slate-400 text-sm">Universidade Federal de Uberlândia (UFU)</p>
+                    </div>
+                    <i class="fa-solid fa-graduation-cap text-3xl text-accent-gold hidden md:block"></i>
+                </div>
+
+                <!-- Graduações -->
+                <div class="p-6 bg-dark-base rounded-2xl border-l-4 border-accent-cyan shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <span class="text-xs font-bold text-accent-cyan bg-accent-cyan/10 px-3 py-1 rounded-full">Graduações</span>
+                        <h3 class="text-lg font-bold text-white mt-2">Licenciaturas em Letras (Português/Inglês - UFU), Pedagogia e Educação Física</h3>
+                        <p class="text-slate-400 text-sm">Universidade Federal de Uberlândia (UFU) | UniCruzeiro | UniCV</p>
+                    </div>
+                    <i class="fa-solid fa-book-bookmark text-3xl text-accent-cyan hidden md:block"></i>
+                </div>
+
+                <!-- Pós-graduações -->
+                <div class="p-6 bg-dark-base rounded-2xl border-l-4 border-emerald-500 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <span class="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full">Especializações</span>
+                        <h3 class="text-lg font-bold text-white mt-2">Especialista em Língua Portuguesa, Redação e Oratória | Ensino de Inglês e Tecnologias</h3>
+                        <p class="text-slate-400 text-sm">UFU | Instituto Passo 1 | UniCV</p>
+                    </div>
+                    <i class="fa-solid fa-award text-3xl text-emerald-500 hidden md:block"></i>
+                </div>
+
+                <!-- Certificações -->
+                <div class="p-6 bg-dark-base rounded-2xl border-l-4 border-slate-500 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <span class="text-xs font-bold text-slate-300 bg-slate-700 px-3 py-1 rounded-full">Certificações de Idiomas</span>
+                        <h3 class="text-lg font-bold text-white mt-2">TOEFL – ITP (Score: 537) & Proficiência em Inglês PROFLIN/UFU</h3>
+                        <p class="text-slate-400 text-sm">Certificações internacionais e universitárias de proficiência em língua estrangeira.</p>
+                    </div>
+                    <i class="fa-solid fa-certificate text-3xl text-slate-500 hidden md:block"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Como Funciona -->
+    <section id="como-funciona" class="py-20 bg-dark-base">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-accent-gold uppercase tracking-widest">Processo Simples</span>
+                <h2 class="text-3xl font-bold text-white sm:text-4xl mt-1">Como Funciona a Revisão</h2>
+                <div class="w-16 h-1 bg-gradient-gold mx-auto my-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-dark-card p-8 rounded-2xl border border-dark-border text-center relative">
+                    <div class="w-12 h-12 bg-gradient-gold text-black rounded-full flex items-center justify-center font-extrabold text-xl mx-auto mb-6">
+                        1
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Envio do Arquivo</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Envie o seu documento (Word/PDF) pelo WhatsApp ou e-mail com a contagem de páginas/palavras.
+                    </p>
+                </div>
+
+                <div class="bg-dark-card p-8 rounded-2xl border border-dark-border text-center relative">
+                    <div class="w-12 h-12 bg-gradient-gold text-black rounded-full flex items-center justify-center font-extrabold text-xl mx-auto mb-6">
+                        2
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Orçamento & Prazo</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Receba uma proposta personalizada com valor justo e o prazo exato para a entrega do seu texto revisado.
+                    </p>
+                </div>
+
+                <div class="bg-dark-card p-8 rounded-2xl border border-dark-border text-center relative">
+                    <div class="w-12 h-12 bg-gradient-gold text-black rounded-full flex items-center justify-center font-extrabold text-xl mx-auto mb-6">
+                        3
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Entrega Pronta</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Receba o arquivo final totalmente corrigido e formatado nas normas exigidas (com marcas de alteração, se solicitado).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-black text-white pt-16 pb-8 border-t border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-dark-border">
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-white">Rafael Abrahão de Sousa</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Revisor de textos, tradutor e consultor acadêmico. Rigor gramatical e estilístico para publicações e trabalhos acadêmicos.
+                    </p>
+                    <p class="text-xs text-accent-gold">Uberlândia/MG</p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Navegação</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="#sobre" class="hover:text-accent-gold transition-colors">Sobre Mim</a></li>
+                        <li><a href="#servicos" class="hover:text-accent-gold transition-colors">Serviços Oferecidos</a></li>
+                        <li><a href="#formacao" class="hover:text-accent-gold transition-colors">Formação Acadêmica</a></li>
+                        <li><a href="#como-funciona" class="hover:text-accent-gold transition-colors">Como Funciona</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Contatos</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+                            <a href="https://wa.me/5534999997382" target="_blank" class="hover:text-white">(34) 99999-7382</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-regular fa-envelope text-accent-cyan text-lg"></i>
+                            <a href="mailto:rafael.abrahaodesousa@gmail.com" class="hover:text-white">rafael.abrahaodesousa@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Atendimento</h4>
+                    <p class="text-sm text-slate-400 mb-2">Atendimento On-line para todo o Brasil:</p>
+                    <span class="inline-block bg-dark-card text-accent-gold text-xs font-semibold px-3 py-1.5 rounded-lg border border-dark-border">
+                        Orçamentos Rápidos via WhatsApp
+                    </span>
+                </div>
+            </div>
+
+            <div class="pt-8 text-center text-xs text-slate-500 space-y-2">
+                <p>&copy; Rafael Abrahão de Sousa. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="https://wa.me/5534999997382?text=Olá,%20Rafael!%20Gostaria%20de%20um%20orçamento%20para%20revisão/tradução." 
+       target="_blank" 
+       aria-label="Contato pelo WhatsApp"
+       class="fixed bottom-6 right-6 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full shadow-2xl shadow-emerald-500/30 flex items-center justify-center text-3xl z-50 hover:scale-110 transition-transform duration-300">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript para Menu Mobile -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var menuBtn = document.getElementById('menu-btn');
+            var mobileMenu = document.getElementById('mobile-menu');
+
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                var menuLinks = mobileMenu.querySelectorAll('a');
+                for (var i = 0; i < menuLinks.length; i++) {
+                    menuLinks[i].addEventListener('click', function() {
+                        mobileMenu.classList.add('hidden');
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
